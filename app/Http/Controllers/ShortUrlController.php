@@ -24,21 +24,23 @@ class ShortUrlController extends Controller
         ], 201);
     }
 
-    public function retrieve($code)
-    {
-        $shortUrl = ShortUrl::where('short_code', $code)->firstOrFail();
+public function retrieve($code)
+{
+    $shortUrl = ShortUrl::where('short_code', $code)->firstOrFail();
 
-        // Increment access count I have changed the name of the column to clicks
-        $shortUrl->increment('clicks');
+    // Increment access count I have changed the name of the column to clicks
+    $shortUrl->increment('clicks');
 
-        return response()->json([
-            'id' => $shortUrl->id,
-            'url' => $shortUrl->original_url,
-            'shortCode' => $shortUrl->short_code,
-            'createdAt' => $shortUrl->created_at,
-            'updatedAt' => $shortUrl->updated_at,
-        ], 200);
-    }
+    return response()->json([
+        'id' => $shortUrl->id,
+        'url' => $shortUrl->original_url,
+        'shortCode' => $shortUrl->short_code,
+        'createdAt' => $shortUrl->created_at,
+        'updatedAt' => $shortUrl->updated_at,
+    ], 200);
+}
+
+
     public function update(Request $request, $code)
     {
         $request->validate(['url' => 'required|url']);

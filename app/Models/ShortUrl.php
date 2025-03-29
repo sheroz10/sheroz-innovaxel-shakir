@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Models;
-
 use Tuupola\Base62;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,7 +13,7 @@ class ShortUrl extends Model
         parent::boot();
         static::creating(function ($shortUrl) {
             $base62 = new Base62();
-            $shortUrl->short_code = $base62->encode($shortUrl->id);
+            $shortUrl->short_code = $base62->encode(time()); // Ensures uniqueness
         });
     }
 }
