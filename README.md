@@ -1,32 +1,32 @@
-URL Shortening Service 
+# **URL Shortening Service**  
 A simple RESTful API for shortening URLs, retrieving original links, updating short links, deleting them, and tracking their access statistics.  
 
-**Features**
+## **Features**  
 ✔️ Shorten long URLs  
 ✔️ Retrieve original URLs from short codes  
 ✔️ Update short URLs  
 ✔️ Delete short URLs  
 ✔️ Track access statistics  
 
-Tech Stack
-- Backend:Laravel  
-- Database: MySQL  
-- API Standard: RESTful  
+## **Tech Stack**  
+- **Backend:** Laravel  
+- **Database:** MySQL  
+- **API Standard:** RESTful  
 
-## Installation & Setup
+## **Installation & Setup**  
 
-### 1. Clone the Repository
+### **1. Clone the Repository**  
 ```sh
 git clone https://github.com/yourusername/url-shortener.git
 cd url-shortener
 ```
 
-### 2. Install Dependencies
+### **2. Install Dependencies**  
 ```sh
 composer install
 ```
 
-### 3. Set Up Environment Variables 
+### **3. Set Up Environment Variables**  
 Copy `.env.example` to `.env` and update database credentials:  
 ```sh
 cp .env.example .env
@@ -38,7 +38,7 @@ DB_USERNAME=your_username
 DB_PASSWORD=your_password
 ```
 
-4. Generate Application Key 
+### **4. Generate Application Key**  
 ```sh
 php artisan key:generate
 ```
@@ -138,7 +138,7 @@ php artisan serve
 
 ---
 
-Code Structure 
+## **Code Structure**  
 ```
 app/
 │── Http/
@@ -158,14 +158,20 @@ composer.json
 
 ---
 
-Testing the API
+## **Testing the API**  
 You can test the API using:  
-- Postman  
-- cURL
-- Laravel Artisan Tinker
+- **Postman**  
+- **cURL**  
+- **Laravel Artisan Tinker**  
 
-
+Example using **cURL**:  
+```sh
 curl -X POST http://localhost:8000/api/shorten -H "Content-Type: application/json" -d '{"url": "https://www.example.com"}'
+```
 
-License
+---
+
+## **License**  
 This project is open-source and available under the MIT License.  
+
+---
