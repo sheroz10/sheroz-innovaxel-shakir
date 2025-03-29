@@ -1,7 +1,7 @@
 URL Shortening Service 
 A simple RESTful API for shortening URLs, retrieving original links, updating short links, deleting them, and tracking their access statistics.  
 
-Features
+**Features**
 ✔️ Shorten long URLs  
 ✔️ Retrieve original URLs from short codes  
 ✔️ Update short URLs  
